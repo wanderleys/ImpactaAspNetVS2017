@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.Capitulo01.Var
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.cap01.Troco", "AspNetVS2017.cap01.Troco\AspNetVS2017.cap01.Troco.csproj", "{654E8456-2E36-494B-AC6A-D99B60FF5701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.capitulo01.Fretes", "AspNetVS2017.capitulo01.Fretes\AspNetVS2017.capitulo01.Fretes.csproj", "{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{654E8456-2E36-494B-AC6A-D99B60FF5701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{654E8456-2E36-494B-AC6A-D99B60FF5701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{654E8456-2E36-494B-AC6A-D99B60FF5701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
