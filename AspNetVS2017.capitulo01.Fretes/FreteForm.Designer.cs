@@ -129,6 +129,7 @@
             "RJ",
             "MG",
             "AM",
+            "PE",
             "Outros"});
             this.ufcomboBox.Location = new System.Drawing.Point(60, 98);
             this.ufcomboBox.Name = "ufcomboBox";
@@ -154,6 +155,7 @@
             this.limparbutton.TabIndex = 11;
             this.limparbutton.Text = "&Limpar";
             this.limparbutton.UseVisualStyleBackColor = true;
+            this.limparbutton.Click += new System.EventHandler(this.limparbutton_Click);
             // 
             // FreteForm
             // 

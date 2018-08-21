@@ -9,6 +9,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.cap01.Troco", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.capitulo01.Fretes", "AspNetVS2017.capitulo01.Fretes\AspNetVS2017.capitulo01.Fretes.csproj", "{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.Capitulo01.Repeticao.Teste", "AspNetVS2017.Capitulo01.Repeticao.Teste\AspNetVS2017.Capitulo01.Repeticao.Teste.csproj", "{9DC21C58-AFCF-43CD-B761-25CAC74F63CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetVS2017.Capitulo01.VetoresColecoes.Testes", "AspNetVS2017.Capitulo01.VetoresColecoes.Testes\AspNetVS2017.Capitulo01.VetoresColecoes.Testes.csproj", "{D0B59511-DC68-490B-8B88-8C4602F8A2BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oficina", "Oficina", "{9F44D302-66D7-42CF-84D3-C00AB4D98C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oficina.Dominio", "Oficina.Dominio\Oficina.Dominio.csproj", "{DA97874C-F462-4474-9AB9-98DBE7C743F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oficina.Repositorios.SistemaArquivos", "Oficina.Repositorios.SistemaArquivos\Oficina.Repositorios.SistemaArquivos.csproj", "{369C0125-99DD-443D-9F8B-DC91793154F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oficina.Repositorios.SistemaArquivosTests", "Oficina.Repositorios.SistemaArquivosTests\Oficina.Repositorios.SistemaArquivosTests.csproj", "{E838263A-89C7-49DA-BCB0-2B4B83F26298}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +39,34 @@ Global
 		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{042B6DB8-A30B-47CD-BA7E-736DB7F029DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC21C58-AFCF-43CD-B761-25CAC74F63CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC21C58-AFCF-43CD-B761-25CAC74F63CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC21C58-AFCF-43CD-B761-25CAC74F63CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC21C58-AFCF-43CD-B761-25CAC74F63CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B59511-DC68-490B-8B88-8C4602F8A2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B59511-DC68-490B-8B88-8C4602F8A2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B59511-DC68-490B-8B88-8C4602F8A2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B59511-DC68-490B-8B88-8C4602F8A2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA97874C-F462-4474-9AB9-98DBE7C743F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA97874C-F462-4474-9AB9-98DBE7C743F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA97874C-F462-4474-9AB9-98DBE7C743F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA97874C-F462-4474-9AB9-98DBE7C743F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369C0125-99DD-443D-9F8B-DC91793154F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369C0125-99DD-443D-9F8B-DC91793154F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369C0125-99DD-443D-9F8B-DC91793154F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369C0125-99DD-443D-9F8B-DC91793154F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E838263A-89C7-49DA-BCB0-2B4B83F26298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E838263A-89C7-49DA-BCB0-2B4B83F26298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E838263A-89C7-49DA-BCB0-2B4B83F26298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E838263A-89C7-49DA-BCB0-2B4B83F26298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA97874C-F462-4474-9AB9-98DBE7C743F5} = {9F44D302-66D7-42CF-84D3-C00AB4D98C96}
+		{369C0125-99DD-443D-9F8B-DC91793154F8} = {9F44D302-66D7-42CF-84D3-C00AB4D98C96}
+		{E838263A-89C7-49DA-BCB0-2B4B83F26298} = {9F44D302-66D7-42CF-84D3-C00AB4D98C96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {963514C4-F551-4EE8-82FD-2959D4E9C4AA}

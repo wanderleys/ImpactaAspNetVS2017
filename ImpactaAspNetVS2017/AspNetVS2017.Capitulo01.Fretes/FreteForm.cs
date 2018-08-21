@@ -8,58 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AspNetVS2017.capitulo01.Fretes
+namespace AspNetVS2017.Capitulo01.Fretes
 {
     public partial class FreteForm : Form
     {
-        private List<string> erros;
-
         public FreteForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clientetextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void calcularbutton_Click(object sender, EventArgs e)
+        private void calcularButton_Click(object sender, EventArgs e)
         {
             var erros = ValidarFormulario();
 
             if (erros.Count == 0)
             {
-               Calcular();
+                Calcular();
             }
             else
             {
                 MessageBox.Show(string.Join(Environment.NewLine, erros),
                     "Validação",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error); 
+                    MessageBoxIcon.Error);
             }
-        
-
         }
 
         private void Calcular()
         {
             var frete = 0m;
-            var valor = Convert.ToDecimal(valortextBox.Text);
-            var nordeste = new List<string> {"BA","PE","AL", "RN", "CE"};
+            var valor = Convert.ToDecimal(valorTextBox.Text);
+            var nordeste = new List<string> { "BA", "PE", "AL", "RN", "CE" };
 
-            switch (ufcomboBox.Text) // igual if e else
+            switch (ufComboBox.Text)
             {
                 case "SP":
                     frete = 0.2m;
                     break;
                 case "RJ":
+                case "ES":
                     frete = 0.3m;
                     break;
                 case "MG":
@@ -74,44 +61,50 @@ namespace AspNetVS2017.capitulo01.Fretes
                 default:
                     frete = 0.75m;
                     break;
-                case null: //novidade 2017
+                case null:
                     throw new NullReferenceException("Combo UF não pode ser nulo.");
                     //break;
-
             }
 
+            //if (ufComboBox.Text == "SP")
+            //{
+            //    frete = 0.2m;
+            //}
+            //else if (ufComboBox.Text == "RJ")
+            //{
+            //    frete = 0.3m;
+            //}
+            //else if (ufComboBox.Text == "AM")
+            //{
+            //    frete = 0.6m;
+            //}
+            //else
+            //{
+            //    frete = 0.75m;
+            //}
 
-
-
-            fretetextBox.Text = frete.ToString("P2"); //p significa percentual, 2 = 2 casa decimais
-            totaltextBox.Text = ((1 + frete) * valor).ToString("c"); //
-
+            freteTextBox.Text = frete.ToString("P2");
+            totalTextBox.Text = ((1 + frete) * valor).ToString("c");
         }
 
-        private List<string> ValidarFormulario() //pode se criar uma lista de qualquer coisa
+        private List<string> ValidarFormulario()
         {
             var erros = new List<string>();
 
-            if (clientetextBox.Text == string.Empty)
+            if (clienteTextBox.Text == string.Empty)
             {
-                erros.Add("O campo Cliente é obrigatório"); // SHIFT + CTRL + BARRA DE ESPAÇO
+                erros.Add("O campo Cliente é obrigatório.");
             }
 
-            if (string.IsNullOrEmpty(valortextBox.Text))
+            if (string.IsNullOrEmpty(valorTextBox.Text))
             {
-                erros.Add("O campo Valor é obrigatório"); 
-            }
-
-            if (string.IsNullOrEmpty(valortextBox.Text))
-            {
-                erros.Add("O campo Valor é obrigatório");
+                erros.Add("O campo Valor é obrigatório.");
             }
             else
             {
-                if (!decimal.TryParse(valortextBox.Text, out decimal valor))
+                if (!decimal.TryParse(valorTextBox.Text, out decimal valor))
                 {
-                    erros.Add("O campo Valor está com o formato inválido");
-                    
+                    erros.Add("O campo Valor está com formato inválido.");
                 }
                 else
                 {
@@ -122,24 +115,23 @@ namespace AspNetVS2017.capitulo01.Fretes
                 }
             }
 
-            if (ufcomboBox.SelectedIndex == -1)
+            if (ufComboBox.SelectedIndex == -1)
             {
-                erros.Add("Selecione o Estado (UF).");
+                erros.Add("Selecione a UF.");
             }
-
 
             return erros;
         }
 
-        private void limparbutton_Click(object sender, EventArgs e)
+        private void limparButton_Click(object sender, EventArgs e)
         {
-            clientetextBox.Text = "";
-            valortextBox.Text = string.Empty;
-            ufcomboBox.SelectedIndex = -1;
-            fretetextBox.Clear();
-            totaltextBox.Text = null;
+            clienteTextBox.Text = "";
+            valorTextBox.Text = string.Empty;
 
+            ufComboBox.SelectedIndex = -1;
 
+            freteTextBox.Clear();
+            totalTextBox.Text = null;
         }
     }
 }
