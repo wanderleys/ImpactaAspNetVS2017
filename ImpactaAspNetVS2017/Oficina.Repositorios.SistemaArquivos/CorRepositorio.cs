@@ -6,11 +6,13 @@ using System.IO;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
+    
     public class CorRepositorio
     {
         private string _caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
             ConfigurationManager.AppSettings["CaminhoArquivoCor"]);
 
+        //todo: OO - polimorfismo por sobrecarga (overload)
         public List<Cor> Selecionar()
         {
             var cores = new List<Cor>();
