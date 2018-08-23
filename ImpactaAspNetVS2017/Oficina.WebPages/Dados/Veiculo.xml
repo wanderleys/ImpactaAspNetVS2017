@@ -40,4 +40,88 @@
     <Cambio>Automatico</Cambio>
     <Observacao>TEste</Observacao>
   </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>1e72413b-c33c-45b2-a428-98e8b2fcc5e3</Id>
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>2</Id>
+      <Nome>Focus</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Ano>2018</Ano>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Amarelo</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Observacao>l</Observacao>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>9e02cc71-daa6-4808-a13d-e0a44b721760</Id>
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>3</Id>
+      <Nome>Fiesta</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Ano>2018</Ano>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Amarelo</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Observacao>l</Observacao>
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>253d145b-06d6-4888-922e-63748ec57350</Id>
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>3</Id>
+      <Nome>Fiesta</Nome>
+      <Marca>
+        <Id>2</Id>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Ano>2018</Ano>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Amarelo</Nome>
+    </Cor>
+    <Combustivel>Alcool</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Observacao />
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Id>e16fb962-fa4e-4318-bede-c41fab44fba0</Id>
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <Id>4</Id>
+      <Nome>Onix</Nome>
+      <Marca>
+        <Id>3</Id>
+        <Nome>GM</Nome>
+      </Marca>
+    </Modelo>
+    <Ano>102030</Ano>
+    <Cor>
+      <Id>1</Id>
+      <Nome>Amarelo</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Automatizado</Cambio>
+    <Observacao />
+    <Carroceria>Hatch</Carroceria>
+  </VeiculoPasseio>
 </veiculos>

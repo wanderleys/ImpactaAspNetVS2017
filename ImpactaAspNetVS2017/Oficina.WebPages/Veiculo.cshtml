@@ -9,44 +9,61 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Cadastro de Veículos</title>
     <style type="text/css">
-        body{
+        body {
             font-size: 16px;
             font-family: "Roboto", sans-serif;
-
         }
 
         label {
             min-width: 100px;
             display: inline-block;
         }
-        input, select{
+
+        input, select {
             min-height: 24px;
             min-width: 200px;
             margin-bottom: 5px;
         }
 
-        input[type=submit]{
-            min-height: 24px;
-            min-width: 300px;
+            input[type=submit] {
+                min-height: 24px;
+                min-width: 300px;
+         }
+            #mensagemErro {
+                height: 40px;
+                background-color: #dc3545;
+                margin-bottom: 10px;
+                color: white;
+                vertical-align: middle;
+                text-align: center;
+                line-height: 40px;
 
-        }
+         }
 
 
     </style>
 </head>
-<body>
-    @{ 
+<body onload="exibirMensagem()">
+    @{
         if (IsPost)
         {
-            _veiculoAplicacao.Inserir();
-            Response.Redirect("Veiculo");
+            try
+            {
+                _veiculoAplicacao.Inserir();
+                Response.Redirect("Veiculo?mensagem=Veículo cadastrado com sucesso!");
+
+            }
+            catch
+            {
+               <div id="mensagemErro">@HttpContext.Current.Items["MensagemErro"]</div>
+            }
         }
-        
+
     }
     <h1>Cadastro de Veículos</h1>
-    <hr/>
+    <hr />
     <form method="post">
-      <label for="marca">Marca</label>
+        <label for="marca">Marca</label>
         <select name="marca" id="marca" onchange="obterModelos(this.value)">
             <option value="">Selecione</option>
             @foreach (var marca in _veiculoAplicacao.Marcas)
@@ -54,7 +71,7 @@
                 <option value="@marca.Id" selected="@Convert.ToBoolean(_veiculoAplicacao.MarcaSelecionada == marca.Id.ToString())">@marca.Nome</option>
             }
         </select>
-        <br/>
+        <br />
 
         <label for="modelo">Modelo</label>
         <select name="modelo" id="modelo">
@@ -68,7 +85,7 @@
 
         <label for="placa">Placa</label>
         <input type="text" name="placa" value="" />
-        <br/>
+        <br />
 
         <label for="ano">Ano</label>
         <input type="text" name="ano" value="" />
@@ -103,9 +120,9 @@
             }
         </select>
         <br />
-        
+
         <label for="observacao">Observação</label>
-        <br/>
+        <br />
         <textarea name="observacao" rows="10" cols="40"></textarea>
         <br />
 
@@ -117,6 +134,18 @@
         function obterModelos(marcaId) {
             document.location.href = "Veiculo?marcaId=" + marcaId;
         }
+
+        function exibirMensagem() {
+            const params = (new URL(document.location)).searchParams;
+            const mensagem = params.get("mensagem");
+
+            if (mensagem) {
+                alert(mensagem);
+                document.location.href = "Veiculo";
+
+            }
+        }
+        
     </script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 using Oficina.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -49,26 +50,49 @@ namespace Oficina.WebPages
         public void Inserir()
         {
 
-            var veiculo = new VeiculoPasseio();
-            var formulario = HttpContext.Current.Request.Form;
+            try
+            {
+                var veiculo = new VeiculoPasseio();
+                var formulario = HttpContext.Current.Request.Form;
 
-            veiculo.Placa = formulario["placa"];//.ToUpper().Replace("-", string.Empty);
+                veiculo.Placa = formulario["placa"];//.ToUpper().Replace("-", string.Empty);
+                veiculo.Ano = Convert.ToInt32(formulario["ano"]);
+                veiculo.Observacao = formulario["observacao"];
+                veiculo.Cambio = (Cambio)Convert.ToInt32(formulario["cambio"]);
+                veiculo.Combustivel = (Combustivel)Convert.ToInt32(formulario["combustivel"]);
+                veiculo.Cor = _corRepositorio.Selecionar(Convert.ToInt32(formulario["cor"]));
+                veiculo.Modelo = _modeloRepositorio.Selecionar(Convert.ToInt32(formulario["modelo"]));
+                veiculo.Carroceria = TipoCarroceria.Hatch;
 
-            veiculo.Ano = Convert.ToInt32(formulario["ano"]);
+                _veiculoRepositorio.Inserir(veiculo);
+            }
+            catch (FileNotFoundException ex)
+            {
+                HttpContext.Current.Items.Add("MensagemErro",
+                   $"O arquivo {ex.FileName} não foi encontrado.");
+                throw ex; // se tiver parametro, os erros anteriores nao sao exibidos.
+            }
+            catch (DirectoryNotFoundException)
+            {
+                HttpContext.Current.Items.Add("MensagemErro",
+                   "Pasta não foi encontrado.");
+                throw;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                HttpContext.Current.Items.Add("MensagemErro",
+                   "Acesso ao arquivo Negado!.");
+                throw;
+            }
+            catch (Exception excecao)
+            {
+                HttpContext.Current.Items.Add("MensagemErro", 
+                    "Ooops! Sua operação não foi concluida.");
 
-            veiculo.Observacao = formulario["observacao"];
+                //logar o objeto exceçao;
 
-            veiculo.Cambio = (Cambio)Convert.ToInt32(formulario["cambio"]);
-
-            veiculo.Combustivel = (Combustivel)Convert.ToInt32(formulario["combustivel"]);
-
-            veiculo.Cor = _corRepositorio.Selecionar(Convert.ToInt32(formulario["cor"]));
-
-            veiculo.Modelo = _modeloRepositorio.Selecionar(Convert.ToInt32(formulario["modelo"]));
-
-            veiculo.Carroceria = TipoCarroceria.Hatch;
-
-            _veiculoRepositorio.Inserir(veiculo);
+                throw;//arremessa o erro para frente mas nao pode ser utilizado sempre
+            }
         }
 
     }
